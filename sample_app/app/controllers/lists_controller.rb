@@ -6,10 +6,11 @@ class ListsController < ApplicationController
   def create
     list = List.new(list_params)
     list.save
-    redirect_to '/top'
+    redirect_to '/lists'
   end
 
   def index
+    @lists=List.all
   end
 
   def show
