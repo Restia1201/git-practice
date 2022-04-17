@@ -4,12 +4,18 @@
  </p>
 <% end %>
 
-
-<h4>タイトル</h4>
+<div class="filed">
+<p><strong>Title:</strong>
 <%= @book.title %>
+</p>
+</div>
 
-<h4>本文</h4>
+<div class="filed">
+<p><strong>Body:</strong>
 <%= @book.body %>
+</p>
+</div>
+
 
 <%= link_to 'Edit', edit_book_path(@book.id) %>
 |
