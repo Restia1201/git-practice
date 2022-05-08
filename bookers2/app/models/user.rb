@@ -6,5 +6,14 @@ class User < ApplicationRecord
   has_one_attached :image
   has_many :books, dependent: :destroy
 
+  has_one_attached :profile_image
+
+  def get_profile_image
+    unless profile_image.attached?
+      file_path = Rails.root.join('app/assets/images/no-image.jpg')
+      profile_image.attached(io: File.open(file_path), filename: 'default-image.jpg', content_type: 'image/jpg')
+    end
+    profile_image.variant(resize_to_limit: [width, height]).processed
+  end
 
 end
