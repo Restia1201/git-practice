@@ -2,9 +2,9 @@
 <html>
   <head>
     <title>Bookers</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1, maxium-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <meta name="viewport" content="width=device-width,initial-scale=1, maxium-scale=1">
 
     <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
@@ -23,12 +23,15 @@
        <ul class="navbar-nav ml-auto">
         <% if user_signed_in? %>
          <li class="nav-item">
+          <i class="fa-solid fa-house-chimney"></i>
           <%= link_to 'Home', user_path(current_user.id), class: 'nav-link text-light' %>
          </li>
          <li class="nav-item">
+          <i class="fa-solid fa-users"></i>
           <%= link_to 'Users', users_path, class: 'nav-link text-light' %>
          </li>
          <li class="nav-item">
+          <i class="fa-regular fa-book-open-cover"></i>
           <%= link_to 'Books', books_path, class: 'nav-link text-light' %>
          </li>
          <li class="nav-item">
@@ -36,15 +39,19 @@
          </li>
         <% else %>
          <li class="nav-item">
+          <i class="fa-solid fa-house-chimney"></i>
           <%= link_to 'Home', root_path, class: 'nav-link text-light' %>
          </li>
          <li class="nav-item">
+          <i class="fa-solid fa-link"></i>
           <%= link_to 'About', about_path, class: 'nav-link text-light' %>
          </li>
          <li class="nav-item">
+          <i class="fa-solid fa-user-plus"></i>
           <%= link_to 'Sign up', new_user_registration_path, class: 'nav-link text-light' %>
          </li>
          <li class="nav-item">
+          <i class="fa-solid fa-arrow-right-to-bracket"></i>
           <%= link_to 'Log in', new_user_session_path, class: 'nav-link text-light'%>
          </li>
         <% end %>
@@ -56,9 +63,9 @@
    <main class="mb-auto">
    <%= yield %>
    </main>
-   <footer class="bg-dark text-white pt-5 pb-4">
-    <div class="container">
-     <div calss="row no-gutters">
+   <footer>
+    <div class="container mt-5">
+     <div calss="row">
       <div class="mx-auto">
        <p>CopyRight Infratop.inc</p>
       </div>
